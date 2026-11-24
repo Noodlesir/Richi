@@ -1,18 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Richi</title>
-  <link rel="stylesheet" href="richi.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Richi PC components and accessories. Product details are being updated.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Richi | PC Components &amp; Accessories</title>
+  <link rel="stylesheet" href="richi.css">
+  <script src="richi.js" defer></script>
 </head>
 <body>
-  <button id="theme-toggle" type="button" aria-label="Switch theme">Light mode</button>
-  <main>
-    <h1>Richi</h1>
-    <div class="bar"></div>
-    <p>The best PC components and accessories at the best price.</p>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="announcement-bar" id="announcement">
+    <div class="container announcement-content">
+      <p>Welcome to Richi. Store and product details are being updated.</p>
+      <button class="icon-button close-btn" id="announcement-close" type="button" aria-label="Dismiss announcement">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a class="logo" href="#home" aria-label="Richi home">
+        <span class="logo-mark" aria-hidden="true">R</span>
+        <span class="logo-text">RICHI<span class="logo-period">.</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="#components">Components</a>
+        <a class="nav-link" href="#accessories" data-category-link="accessories">Accessories</a>
+        <a class="nav-link" href="#gaming">Gaming</a>
+        <a class="nav-link" href="#new-arrivals">New Arrivals</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-container" id="search-form" role="search">
+          <label class="sr-only" for="search-input">Search catalog</label>
+          <input id="search-input" class="search-input" type="search" placeholder="Search catalog" autocomplete="off">
+          <button class="search-btn" type="submit" aria-label="Search">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+          </button>
+        </form>
+
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+        </button>
+
+        <button class="cart-btn" id="cart-btn" type="button" aria-label="Open shopping cart, 0 items" aria-haspopup="dialog" aria-controls="cart-panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M3 3h2l2.2 11.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"></path>
+            <circle cx="10" cy="20" r="1"></circle>
+            <circle cx="18" cy="20" r="1"></circle>
+          </svg>
+          <span>Cart</span>
+          <span class="cart-badge" id="cart-count" aria-live="polite">0</span>
+        </button>
+
+        <button class="mobile-menu-btn icon-button" id="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav-container" id="mobile-nav" hidden>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#components">Components</a>
+        <a href="#accessories" data-category-link="accessories">Accessories</a>
+        <a href="#gaming">Gaming</a>
+        <a href="#new-arrivals">New Arrivals</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> PC components &amp; accessories</p>
+          <h1 id="hero-heading">Build better.<br><span>Play faster.</span></h1>
+          <p class="hero-description">Explore the Richi catalog for components and gear to make your setup your own.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#components">Explore components <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#accessories" data-category-link="accessories">Browse accessories</a>
+          </div>
+          <p class="hero-note">Catalog information is being verified. Check back for product details.</p>
+        </div>
+        <div class="hero-art" role="img" aria-label="Abstract illustration of a desktop computer and graphics card">
+          <div class="art-glow"></div>
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-tower">
+            <div class="tower-top"></div>
+            <div class="tower-light"></div>
+            <div class="tower-fan fan-one"><span></span></div>
+            <div class="tower-fan fan-two"><span></span></div>
+            <div class="tower-line"></div>
+          </div>
+          <div class="art-chip"><span>R</span><i></i><i></i><i></i><i></i></div>
+          <div class="art-caption"><span class="status-dot"></span> Build your next setup</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section section-space" id="components" aria-labelledby="catalog-heading">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Explore the catalog</p>
+            <h2 id="catalog-heading">Find your next upgrade</h2>
+            <p class="section-description">Browse product categories. Availability and verified details will appear as the catalog is updated.</p>
+          </div>
+          <div class="sort-container">
+            <label for="sort-select">Sort</label>
+            <select id="sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-low" disabled>Price: Low to High (details coming soon)</option>
+              <option value="price-high" disabled>Price: High to Low (details coming soon)</option>
+              <option value="popularity" disabled>Popularity (details coming soon)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category-filters" role="group" aria-label="Filter catalog by category">
+          <button class="filter-btn is-active" type="button" data-category="all" aria-pressed="true">All categories</button>
+          <button class="filter-btn" type="button" data-category="processors" aria-pressed="false">Processors</button>
+          <button class="filter-btn" type="button" data-category="graphics-cards" aria-pressed="false">Graphics cards</button>
+          <button class="filter-btn" type="button" data-category="motherboards" aria-pressed="false">Motherboards</button>
+          <button class="filter-btn" type="button" data-category="memory" aria-pressed="false">Memory</button>
+          <button class="filter-btn" type="button" data-category="storage" aria-pressed="false">Storage</button>
+          <button class="filter-btn" type="button" data-category="accessories" aria-pressed="false">Accessories</button>
+        </div>
+
+        <p class="results-status" id="results-status" role="status" aria-live="polite"></p>
+        <div class="products-grid" id="products-grid" aria-label="Catalog items">
+          <article class="product-card"><div class="product-art art-processor"><span aria-hidden="true">CPU</span></div><div class="product-info"><span class="product-category">Processors</span><h3>Processor details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card"><div class="product-art art-graphics"><span aria-hidden="true">GPU</span></div><div class="product-info"><span class="product-category">Graphics cards</span><h3>Graphics card details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card"><div class="product-art art-board"><span aria-hidden="true">PCB</span></div><div class="product-info"><span class="product-category">Motherboards</span><h3>Motherboard details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card"><div class="product-art art-memory"><span aria-hidden="true">RAM</span></div><div class="product-info"><span class="product-category">Memory</span><h3>Memory details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card"><div class="product-art art-storage"><span aria-hidden="true">SSD</span></div><div class="product-info"><span class="product-category">Storage</span><h3>Storage details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card" id="accessories"><div class="product-art art-accessories"><span aria-hidden="true">GEAR</span></div><div class="product-info"><span class="product-category">Accessories</span><h3>Accessory details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card" id="gaming"><div class="product-art art-gaming"><span aria-hidden="true">PLAY</span></div><div class="product-info"><span class="product-category">Gaming accessories</span><h3>Gaming gear details coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+          <article class="product-card" id="new-arrivals"><div class="product-art art-build"><span aria-hidden="true">BUILD</span></div><div class="product-info"><span class="product-category">PC components</span><h3>New arrivals coming soon</h3><p class="product-detail">Verified product information is not available yet.</p><div class="product-actions"><span class="price-pending">Details coming soon</span><button class="btn-card" type="button" disabled>Add to cart</button><button class="quick-view-btn" type="button">Quick view</button></div></div></article>
+        </div>
+        <p class="no-results" id="no-results" hidden>No catalog items match your search. Try another term or category.</p>
+      </div>
+    </section>
+
+    <section class="promo-section" aria-labelledby="promo-heading">
+      <div class="container promo-banner">
+        <div class="promo-content">
+          <p class="eyebrow">The Richi experience</p>
+          <h2 id="promo-heading">Your setup starts here.</h2>
+          <p>Discover components and accessories for your next build. Product availability and offers will be listed when confirmed.</p>
+          <a class="btn btn-primary" href="#components">Explore the catalog <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="promo-visual" aria-hidden="true"><div class="promo-ring"></div><div class="promo-square"></div><span>R</span></div>
+      </div>
+    </section>
+
+    <section class="benefits-section section-space" aria-labelledby="benefits-heading">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <div><p class="eyebrow">Shopping with confidence</p><h2 id="benefits-heading">Helpful details, coming soon</h2></div>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card"><span class="benefit-icon" aria-hidden="true">01</span><h3>Delivery</h3><p>Delivery options and timing: Details coming soon.</p></article>
+          <article class="benefit-card"><span class="benefit-icon" aria-hidden="true">02</span><h3>Checkout</h3><p>Available payment methods: Details coming soon.</p></article>
+          <article class="benefit-card"><span class="benefit-icon" aria-hidden="true">03</span><h3>Returns</h3><p>Return policy: Details coming soon.</p></article>
+          <article class="benefit-card"><span class="benefit-icon" aria-hidden="true">04</span><h3>Support</h3><p>Technical support information: Details coming soon.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container newsletter-content">
+        <div><p class="eyebrow">Stay in the loop</p><h2 id="newsletter-heading">Get Richi updates</h2><p>Sign-up is a demo until a newsletter service is connected.</p></div>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Sign me up</button>
+          <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
   </main>
-  <script src="richi.js"></script>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a class="logo" href="#home" aria-label="Richi home"><span class="logo-mark" aria-hidden="true">R</span><span class="logo-text">RICHI<span class="logo-period">.</span></span></a>
+        <p>PC components and accessories. Store information is being updated.</p>
+      </div>
+      <div class="footer-column"><h2>Explore</h2><a href="#components">Components</a><a href="#accessories" data-category-link="accessories">Accessories</a><a href="#gaming">Gaming</a><a href="#new-arrivals">New arrivals</a></div>
+      <div class="footer-column"><h2>Customer care</h2><a href="#delivery-info">Delivery details</a><a href="#returns-info">Returns policy</a><a href="#support-info">Technical support</a><span id="delivery-info">Details coming soon</span></div>
+      <div class="footer-column"><h2>Store information</h2><span id="returns-info">Returns: Details coming soon</span><span id="support-info">Support: Details coming soon</span><span>Payment methods: Details coming soon</span></div>
+    </div>
+    <div class="container footer-bottom"><p>© <span id="current-year">2026</span> Richi. Store details are subject to confirmation.</p><a href="#home">Back to top ↑</a></div>
+  </footer>
+
+  <dialog class="quick-view-dialog" id="quick-view-dialog" aria-labelledby="quick-view-heading">
+    <div class="quick-view-panel">
+      <button class="icon-button quick-view-close" id="quick-view-close" type="button" aria-label="Close product details"><span aria-hidden="true">&times;</span></button>
+      <div id="quick-view-content"></div>
+    </div>
+  </dialog>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-heading" aria-hidden="true" tabindex="-1" hidden>
+    <div class="cart-panel-header">
+      <div><p class="eyebrow">Your selection</p><h2 id="cart-heading">Shopping cart</h2></div>
+      <button class="icon-button" id="cart-close" type="button" aria-label="Close shopping cart"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <p class="cart-empty" id="cart-empty">Your cart is empty. Products will be available when verified catalog information is added.</p>
+    <ul class="cart-items" id="cart-items" aria-label="Items in your cart"></ul>
+    <div class="cart-total" id="cart-total" hidden><span>Subtotal</span><strong id="cart-subtotal"></strong></div>
+    <p class="cart-note">Checkout is not available yet.</p>
+  </aside>
 </body>
 </html>
