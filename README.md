@@ -3,10 +3,6 @@
 Responsive storefront starter for PC components and accessories, built with
 plain HTML, CSS, and JavaScript.
 
-## Run locally
-
-Open `richi.html` in a modern browser. No build step or external framework is
-required.
 
 ## Current features
 
